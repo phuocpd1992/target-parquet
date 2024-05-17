@@ -39,7 +39,7 @@ class Writers(metaclass=SingletonMeta):
             filename = f"{filepath}/{filename}"
 
         # create folder if not exists
-        pathlib.Path(filename).mkdir(parents=True, exist_ok=True)
+        pathlib.Path(filepath).mkdir(parents=True, exist_ok=True)
 
         self._writers[stream_name] = pq.ParquetWriter(
             filename, schema
